@@ -1,0 +1,65 @@
+@font-face {
+		font-family:Titulo;
+		src:url("Fuentes/LuckiestGuy-Regular.ttf");
+}
+
+@font-face {
+		font-family:Subtitulo;
+		src:url("Fuentes/LoveYaLikeASister-Regular.ttf");
+}
+
+@font-face {
+		font-family:Texto;
+		src:url("Fuentes/Cabin-Variable.ttf");
+}
+
+body{
+	font-family:Texto;
+}
+
+
+.ti{
+	font-family:Titulo;
+		
+}
+
+.subti{
+	font-family:Subtitulo;
+	
+}
+
+
+#cajaTablaKeyword{
+	height:300px;
+	overflow-y: scroll;
+}
+#tablaBuscar{
+	height:300px;
+	overflow-y: scroll;
+	
+}
+
+
+
+
+
+.preloader {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #eee;
+  border-top: 10px solid #666;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

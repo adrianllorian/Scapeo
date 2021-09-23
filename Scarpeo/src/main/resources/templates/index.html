@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>El Topín - Tu Herramienta de SEO</title>
+<link rel="shortcut icon" href="imagenes/topo.png">
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js">
+	
+</script>
+
+<style type="text/css">
+
+@font-face {
+		font-family:Titulo;
+		src:url("Fuentes/LuckiestGuy-Regular.ttf");
+}
+
+@font-face {
+		font-family:Subtitulo;
+		src:url("Fuentes/LoveYaLikeASister-Regular.ttf");
+}
+
+@font-face {
+		font-family:Texto;
+		src:url("Fuentes/Cabin-Variable.ttf");
+}
+
+body{
+	font-family:Texto;
+}
+
+
+.ti{
+	font-family:Titulo;
+		
+}
+
+.subti{
+	font-family:Subtitulo;
+	
+}
+
+
+#cajaTablaKeyword{
+	height:300px;
+	overflow-y: scroll;
+}
+#tablaBuscar{
+	height:300px;
+	overflow-y: scroll;
+	
+}
+
+
+
+
+
+.preloader {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #eee;
+  border-top: 10px solid #666;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+
+</head>
+<body class="bg-dark">
+	<div class="container">
+	<div class="row d-flex justify-content-around mt-2">
+		<div>
+				<img src="imagenes/topo.png" alt="fotoTopo">
+		</div>
+		<div>
+			<div class="row">
+					<h1 class="ti text-white d-flex justify-content-center">El Topín</h1>
+			</div>
+			<div class="row">
+					<h2 class="subti text-white">Tú herramienta de SEO</h2>
+			</div>
+		</div>
+	</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="row"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h4 class="text-white">URL</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+
+				<div class="form-group ml-4">
+					<label for="url" class="text-muted">Escribe la url</label> <input
+						id="url" class="form-control" type="url">
+				</div>
+
+				<div class="form-group d-flex justify-content-center">
+					<button class="btn btn-primary" id="boton">Comprobar</button>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-center">
+			<div class="preloader" style="display: none">
+				<!-- Circulo de Carga -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h4 style="display: none" id="til1" class="text-white">Título</h4>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-center">
+			<p class="text-muted" id="parrafoTitulo" style="display: none">El título de la página
+				web es: &nbsp;</p>
+			<a id="titulo" class="text-success"></a>
+		</div>
+		<div class="row mt-4">
+			<div class="col-12">
+				<h4 style="display: none" id="til2" class="text-white">Etiqueta Meta</h4>
+			</div>
+		</div>
+		<div class="row">
+			<ul id="listaMeta" style="list-style: none; display: none">
+			</ul>
+		</div>
+
+		<div class="row mt-4">
+			<div class="col-6">
+				<h4 style="display: none" id="til3" class="text-white">Href</h4>
+			</div>
+			<div class="col-6" id="tilUrl" style="display: none">
+				<div class="row">
+					<strong><p class="text-success">
+							Número de enlaces FOLLOW: &nbsp;<a id="numFollow"></a>
+						</p></strong>
+				</div>
+				<div class="row ml-4">
+					<strong><p class="text-muted ">
+							Número de enlaces FOLLOW fuera de mi web: &nbsp;<a
+								id="numFollowOut"></a>
+						</p></strong>
+				</div>
+				<div class="row">
+					<strong><p class="text-warning">
+							Número de enlaces NO FOLLOW: &nbsp;<a id="numNoFollow"></a>
+						</p></strong>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<ul id="listaHref" style="list-style: none; display: none">
+			</ul>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<h4 style="display: none" id="til4" class="text-white">Href Follow fuera de mi web</h4>
+			</div>
+		</div>
+		<div class="row">
+			<ul id="listaHrefNoFollow" style="list-style: none; display: none"></ul>
+		</div>
+		
+		
+		<div class="row" id="tilImagenes" style="list-style: none; display: none">
+			<div class="col-6">
+				<h4 class="text-white">Imagenes</h4>
+			</div>
+			<div class="col-6">
+			<strong><p class="text-white"> El número de imagenes es: &nbsp;<a id="numImagenes"></a></p></strong>
+			</div>
+		</div>
+		
+		<div class="row mb-2 d-flex justify-content-center">
+			<button class="btn btn-success" id="botonImagenes" style="display:none;"><a id="textoBotonImagenes"></a></button>
+		</div>
+		<div class="row">
+			<ul id="listaImagenes" style="list-style: none; display: none"></ul>
+		</div>
+		
+		
+		
+		<div class="row mb-5" id="tilKeyword" style="display: none">
+			<div class="col-6">
+				<h4 class="text-white">Keyword</h4>
+			</div>
+			<div class="col-6">
+				<strong><p class="text-white">
+						El número de palabras en la web es: &nbsp;<a id="numPalabras"></a>
+					</p></strong>
+			</div>
+		</div>
+		<div class="row" id="keyword" style="display: none">
+			<div class="col-6">
+				<div id="cajaTablaKeyword">
+					<table class="table text-white" id="tablaKeyword">
+						<thead>
+							<tr>
+								<th>Keyword</th>
+								<th>Número</th>
+							</tr>
+						</thead>
+						<tbody id="filasKeyword">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="col-6">
+				<div class="row d-flex justify-content-center mb-3">
+					<h3 class="text-white">Busca la Keyword</h3>
+				</div>
+				<div class="row d-flex justify-content-center mb-3">
+					<input id="buscarKeyword" type="text">
+				</div>
+				<div class="row d-flex justify-content-center mb-3">
+					<button id="botonKeyword" class="btn btn-success">Buscar
+						keyword</button>
+				</div>
+				<div class="row" style="display: none" id="tablaBuscar">
+					<table class="table text-white">
+						<thead>
+							<tr>
+								<th>Keyword</th>
+								<th>Número</th>
+							</tr>
+						</thead>
+						<tbody id="salidaBuscadorKeyword">
+
+						</tbody>
+					</table>
+				</div>
+				<div class="row d-flex justify-content-center">
+					<button class="btn btn-warning" id="botonLimpiarKeyword" style="display:none">Limpiar Keyword</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row pt-4 pb-4">
+			<div class="col-12">
+				<div class="row">
+					<h5 class="text-muted">Desarrollado por el equipo de:</h5>
+				</div>
+				<div class="row d-flex justify-content-center">
+					<a href="https://rosasdecolores.com" class="text-danger">Rosas
+						de Colores</a>
+				</div>
+				<div class="row d-flez justify-content-center">
+					<a href="https://elclientenotienelarazon.com" class="text-info">El
+						cliente no tiene la razón</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script th:src="@{/jquery/index.js}">
+		
+	</script>
+</body>
+</html>
